@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Join Our Team</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚀 Careers</h1>
+            <p class="tagline">Build your future with us</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Open Positions</h2>
+            <p>We're always looking for talented individuals to join our team. Check out our current openings below.</p>
+        </section>
+
+        <section class="jobs">
+            {% for job in jobs %}
+            <div class="job-card">
+                <h3>{{ job.title }}</h3>
+                <div class="job-details">
+                    <span class="location">📍 {{ job.location }}</span>
+                    <span class="salary">💰 {{ job.salary }}</span>
+                </div>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Debayan Careers. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
